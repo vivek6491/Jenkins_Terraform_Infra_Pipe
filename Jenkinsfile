@@ -7,10 +7,14 @@ pipeline {
 
     stages {
         stage('Clone Repo') {
-            steps {
-                git url: 'https://github.com/your-username/terraform-jenkins-pipeline.git', branch: 'main'
-            }
-        }
+    steps {
+        git(
+            url: 'https://github.com/vivek6491/Jenkins_Terraform_Infra_Pipe.git',
+            credentialsId: 'github-pat'
+        )
+    }
+}
+
 
         stage('Terraform Init') {
             steps {
